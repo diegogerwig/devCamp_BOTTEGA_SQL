@@ -58,3 +58,71 @@ CREATE TABLE Calificaciones (
     FOREIGN KEY (estudiante_id) REFERENCES Estudiantes (estudiante_id),
     FOREIGN KEY (asignatura_id) REFERENCES Asignaturas (asignatura_id)
 );
+
+
+-- ============================================
+-- PASO 3: INSERTAR DATOS DE EJEMPLO
+-- ============================================
+
+-- ----------------------------
+-- Insertar Estudiantes
+-- ----------------------------
+INSERT INTO Estudiantes (nombre) VALUES
+    ('Ana Sánchez'),
+    ('Carlos Pérez'),
+    ('María González'),
+    ('Luis Ramírez'),
+    ('Elena Torres'),
+
+-- ----------------------------
+-- Insertar Profesores
+-- ----------------------------
+INSERT INTO Profesores (nombre) VALUES 
+    ('Dr. García'),
+    ('Dr. Martínez'),
+    ('Dra. López'),
+
+-- ----------------------------
+-- Insertar Asignaturas
+-- ----------------------------
+INSERT INTO Asignaturas (nombre, profesor_id) VALUES
+    ('Matemáticas', 1),
+    ('Física', 2),
+    ('Química', 3),
+    ('Biología', 2),
+    ('Programación', 1),
+
+-- ----------------------------
+-- Insertar Calificaciones
+-- ----------------------------
+INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
+-- Ana (estudiante 1) - 4 asignaturas
+    (1, 1, 8.5),
+    (1, 2, 7.0),
+    (1, 3, 9.0),
+    (1, 4, 8.0),
+
+-- Carlos (estudiante 2) - 5 asignaturas
+    (2, 1, 6.5), 
+    (2, 2, 7.5),
+    (2, 3, 7.5), 
+    (2, 4, 8.0), 
+    (2, 5, 9.5), 
+
+-- María (estudiante 3) - 3 asignaturas
+    (3, 2, 8.0), 
+    (3, 3, 7.5),
+    (3, 4, 9.0),
+
+-- Luis (estudiante 4) - 4 asignaturas
+    (4, 1, 9.5), 
+    (4, 2, 8.5), 
+    (4, 4, 7.0), 
+    (4, 5, 9.0),
+
+-- Elena (estudiante 5) - 5 asignaturas
+    (5, 1, 6.0), 
+    (5, 2, 8.0), 
+    (5, 3, 9.0), 
+    (5, 4, 8.5), 
+    (5, 5, 7.5),
