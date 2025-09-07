@@ -153,3 +153,14 @@ FROM Estudiantes
 GROUP BY
     Estudiantes.estudiante_id,
     Estudiantes.nombre;
+
+-- ----------------------------
+-- 3. Ordenar estudiantes por las asignaturas en las que están inscritos
+-- ----------------------------
+SELECT Asignaturas.nombre, Estudiantes.nombre, Calificaciones.nota
+FROM
+    Estudiantes
+    JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
+    JOIN Asignaturas ON Calificaciones.asignatura_id = Asignaturas.asignatura_id
+ORDER BY Asignaturas.nombre, Estudiantes.nombre;
+
