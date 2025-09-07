@@ -190,4 +190,20 @@ GROUP BY
 ORDER BY 
     AVG(Calificaciones.nota);
 
-
+-- ----------------------------
+-- 5. Estudiante y profesor con más asignaturas en común
+-- ----------------------------
+SELECT 
+    Estudiantes.nombre,
+    Profesores.nombre,
+    COUNT(*)  -- Cuenta las asignaturas en común
+FROM
+    Estudiantes
+    JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
+    JOIN Asignaturas ON Calificaciones.asignatura_id = Asignaturas.asignatura_id
+    JOIN Profesores ON Asignaturas.profesor_id = Profesores.profesor_id
+GROUP BY
+    Estudiantes.estudiante_id,
+    Profesores.profesor_id,
+ORDER BY COUNT(*) DESC
+LIMIT 1;
