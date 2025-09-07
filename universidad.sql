@@ -170,5 +170,24 @@ FROM
     Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
     JOIN Asignaturas ON Calificaciones.asignatura_id = Asignaturas.asignatura_id
-ORDER BY Asignaturas.nombre, Estudiantes.nombre;
+ORDER BY 
+    Asignaturas.nombre, 
+    Estudiantes.nombre;
+
+-- ----------------------------
+-- 4. Reporte de asignaturas y sus promedios (de más difícil a más fácil)
+-- ----------------------------
+SELECT 
+    Asignaturas.nombre, 
+    AVG(Calificaciones.nota), 
+    COUNT(Calificaciones.estudiante_id)
+FROM 
+    Asignaturas
+    JOIN Calificaciones ON Asignaturas.asignatura_id = Calificaciones.asignatura_id
+GROUP BY
+    Asignaturas.asignatura_id,
+    Asignaturas.nombre
+ORDER BY 
+    AVG(Calificaciones.nota);
+
 
