@@ -78,9 +78,9 @@ INSERT INTO Estudiantes (nombre) VALUES
 -- Insertar Profesores
 -- ----------------------------
 INSERT INTO Profesores (nombre) VALUES 
-    ('Dr. García'),
-    ('Dr. Martínez'),
-    ('Dra. López'),
+    ('D. Ricardo García'),
+    ('D. Santiago Martínez'),
+    ('Dña. Marta López'),
 
 -- ----------------------------
 -- Insertar Asignaturas
