@@ -144,3 +144,15 @@ GROUP BY
     p.profesor_id,
     p.nombre
 ORDER BY p.nombre;
+
+-- ----------------------------
+-- 2. Las mejores notas de cada estudiante
+-- ----------------------------
+SELECT e.nombre AS Estudiante, MAX(c.nota) AS Mejor_Nota
+FROM
+    Estudiantes e
+    JOIN Calificaciones c ON e.estudiante_id = c.estudiante_id
+GROUP BY
+    e.estudiante_id,
+    e.nombre
+ORDER BY e.nombre;
