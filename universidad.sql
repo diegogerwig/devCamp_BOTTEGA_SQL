@@ -72,7 +72,7 @@ INSERT INTO Estudiantes (nombre) VALUES
     ('Carlos Pérez'),
     ('María González'),
     ('Luis Ramírez'),
-    ('Elena Torres'),
+    ('Elena Torres');
 
 -- ----------------------------
 -- Insertar Profesores
@@ -80,7 +80,7 @@ INSERT INTO Estudiantes (nombre) VALUES
 INSERT INTO Profesores (nombre) VALUES 
     ('D. Ricardo García'),
     ('D. Santiago Martínez'),
-    ('Dña. Marta López'),
+    ('Dña. Marta López');
 
 -- ----------------------------
 -- Insertar Asignaturas
@@ -90,7 +90,7 @@ INSERT INTO Asignaturas (nombre, profesor_id) VALUES
     ('Física', 2),
     ('Química', 3),
     ('Biología', 2),
-    ('Programación', 1),
+    ('Programación', 1);
 
 -- ----------------------------
 -- Insertar Calificaciones
@@ -125,7 +125,7 @@ INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
     (5, 2, 8.0), 
     (5, 3, 9.0), 
     (5, 4, 8.5), 
-    (5, 5, 7.5),
+    (5, 5, 7.5);
 
 
 -- ============================================
