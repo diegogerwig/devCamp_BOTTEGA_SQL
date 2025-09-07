@@ -135,7 +135,9 @@ INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
 -- ----------------------------
 -- 1. Promedio de nota que da cada profesor
 -- ----------------------------
-SELECT Profesores.nombre, AVG(Calificaciones.nota)
+SELECT 
+    Profesores.nombre, 
+    AVG(Calificaciones.nota)
 FROM
     Profesores
     JOIN Asignaturas ON Profesores.profesor_id = Asignaturas.profesor_id
@@ -147,8 +149,11 @@ GROUP BY
 -- ----------------------------
 -- 2. Las mejores notas de cada estudiante
 -- ----------------------------
-SELECT Estudiantes.nombre, MAX(Calificaciones.nota)
-FROM Estudiantes
+SELECT 
+    Estudiantes.nombre, 
+    MAX(Calificaciones.nota)
+FROM 
+    Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
 GROUP BY
     Estudiantes.estudiante_id,
@@ -157,7 +162,10 @@ GROUP BY
 -- ----------------------------
 -- 3. Ordenar estudiantes por las asignaturas en las que están inscritos
 -- ----------------------------
-SELECT Asignaturas.nombre, Estudiantes.nombre, Calificaciones.nota
+SELECT 
+    Asignaturas.nombre, 
+    Estudiantes.nombre, 
+    Calificaciones.nota
 FROM
     Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
