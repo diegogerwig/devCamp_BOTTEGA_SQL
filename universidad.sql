@@ -126,3 +126,21 @@ INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
     (5, 3, 9.0), 
     (5, 4, 8.5), 
     (5, 5, 7.5),
+
+
+-- ============================================
+-- PASO 4: CONSULTAS REQUERIDAS
+-- ============================================
+
+-- ----------------------------
+-- 1. Promedio de nota que da cada profesor
+-- ----------------------------
+SELECT p.nombre AS Profesor, ROUND(AVG(c.nota), 2) AS Promedio_Notas
+FROM
+    Profesores p
+    JOIN Asignaturas a ON p.profesor_id = a.profesor_id
+    JOIN Calificaciones c ON a.asignatura_id = c.asignatura_id
+GROUP BY
+    p.profesor_id,
+    p.nombre
+ORDER BY p.nombre;
