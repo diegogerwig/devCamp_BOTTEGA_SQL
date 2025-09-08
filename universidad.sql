@@ -204,6 +204,6 @@ FROM
     JOIN Profesores ON Asignaturas.profesor_id = Profesores.profesor_id
 GROUP BY
     Estudiantes.estudiante_id,
-    Profesores.profesor_id,
+    Profesores.profesor_id
 ORDER BY COUNT(*) DESC
 LIMIT 1;
