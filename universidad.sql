@@ -98,8 +98,8 @@ INSERT INTO Asignaturas (nombre, profesor_id) VALUES
 INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
 -- Ana (estudiante 1) - 4 asignaturas
     (1, 1, 8.5),
-    (1, 2, 7.0),
-    (1, 3, 9.0),
+    (1, 2, 10.0),
+    (1, 3, 9.5),
     (1, 4, 8.0),
 
 -- Carlos (estudiante 2) - 5 asignaturas
@@ -143,7 +143,6 @@ FROM
     JOIN Asignaturas ON Profesores.profesor_id = Asignaturas.profesor_id
     JOIN Calificaciones ON Asignaturas.asignatura_id = Calificaciones.asignatura_id
 GROUP BY
-    Profesores.profesor_id,
     Profesores.nombre;
 
 -- ----------------------------
@@ -156,7 +155,6 @@ FROM
     Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
 GROUP BY
-    Estudiantes.estudiante_id,
     Estudiantes.nombre;
 
 -- ----------------------------
@@ -164,8 +162,7 @@ GROUP BY
 -- ----------------------------
 SELECT 
     Asignaturas.nombre, 
-    Estudiantes.nombre, 
-    Calificaciones.nota
+    Estudiantes.nombre
 FROM
     Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
