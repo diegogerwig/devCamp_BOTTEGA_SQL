@@ -182,7 +182,7 @@ FROM
 GROUP BY
     Asignaturas.nombre
 ORDER BY 
-    AVG(Calificaciones.nota) DESC;
+    AVG(Calificaciones.nota) ASC;
 
 -- ----------------------------
 -- 5. Estudiante y profesor con más asignaturas en común
