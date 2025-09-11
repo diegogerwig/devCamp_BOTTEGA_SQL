@@ -161,15 +161,16 @@ GROUP BY
 -- 3. Ordenar estudiantes por las asignaturas en las que están inscritos
 -- ----------------------------
 SELECT 
-    Asignaturas.nombre, 
-    Estudiantes.nombre
+    Estudiantes.nombre,
+    Asignaturas.nombre
 FROM
     Estudiantes
     JOIN Calificaciones ON Estudiantes.estudiante_id = Calificaciones.estudiante_id
     JOIN Asignaturas ON Calificaciones.asignatura_id = Asignaturas.asignatura_id
 ORDER BY 
-    Asignaturas.nombre, 
-    Estudiantes.nombre;
+    Estudiantes.nombre,
+    Asignaturas.nombre;
+
 
 -- ----------------------------
 -- 4. Reporte de asignaturas y sus promedios (de más difícil a más fácil)
