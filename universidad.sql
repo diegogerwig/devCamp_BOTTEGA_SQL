@@ -89,7 +89,7 @@ INSERT INTO Asignaturas (nombre, profesor_id) VALUES
     ('Matemáticas', 1),
     ('Física', 2),
     ('Química', 3),
-    ('Biología', 2),
+    ('Biología', 1),
     ('Programación', 1);
 
 -- ----------------------------
@@ -117,15 +117,14 @@ INSERT INTO Calificaciones (estudiante_id, asignatura_id, nota) VALUES
 -- Luis (estudiante 4) - 4 asignaturas
     (4, 1, 9.5), 
     (4, 2, 8.5), 
-    (4, 4, 7.0), 
+    (4, 3, 7.0), 
     (4, 5, 9.0),
 
--- Elena (estudiante 5) - 5 asignaturas
+-- Elena (estudiante 5) - 4 asignaturas
     (5, 1, 6.0), 
     (5, 2, 8.0), 
     (5, 3, 9.0), 
-    (5, 4, 8.5), 
-    (5, 5, 7.5);
+    (5, 4, 7.5);
 
 
 -- ============================================
@@ -171,22 +170,19 @@ ORDER BY
     Estudiantes.nombre,
     Asignaturas.nombre;
 
-
 -- ----------------------------
 -- 4. Reporte de asignaturas y sus promedios (de más difícil a más fácil)
 -- ----------------------------
 SELECT 
     Asignaturas.nombre, 
-    AVG(Calificaciones.nota), 
-    COUNT(Calificaciones.estudiante_id)
+    AVG(Calificaciones.nota)
 FROM 
     Asignaturas
     JOIN Calificaciones ON Asignaturas.asignatura_id = Calificaciones.asignatura_id
 GROUP BY
-    Asignaturas.asignatura_id,
     Asignaturas.nombre
 ORDER BY 
-    AVG(Calificaciones.nota);
+    AVG(Calificaciones.nota) DESC;
 
 -- ----------------------------
 -- 5. Estudiante y profesor con más asignaturas en común
@@ -203,5 +199,4 @@ FROM
 GROUP BY
     Estudiantes.estudiante_id,
     Profesores.profesor_id
-ORDER BY COUNT(*) DESC
-LIMIT 1;
+ORDER BY COUNT(*) DESC;
